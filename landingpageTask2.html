@@ -1,0 +1,551 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.google.com">
+    <title>Landing Page</title>
+<style>
+ * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    background-color:lightgreen;
+    background-image:url('https://wallpapers.com/images/hd/green-background-ivfksvptao7sdhrg.jpg');
+    color: black;
+    font-family:"Fira Sans", sans-serif;
+}
+  
+nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background-color: green;
+}
+  
+nav .heading {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+  
+nav ul {
+    display: flex;
+    list-style: none;
+}
+  
+nav ul li {
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: 0.2s ease-in;
+}
+  
+nav ul li a {
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+}
+  
+nav ul li:hover {
+    background-color: green;
+}
+  
+nav ul li a:hover {
+    color: orange;
+}
+  
+nav .sideMenuButton {
+    font-size: 30px;
+    font-weight: bolder;
+    cursor: pointer;
+    display: none;
+}
+@media screen and (max-width: 600px) 
+{
+    nav .sideMenuButton 
+    {
+        display: flex;
+    }
+  
+    nav .navbar 
+    {
+        display: none;
+    }
+  
+    .sideNavigationBar
+    {
+        display: block !important;
+    }
+}
+  
+.sideNavigationBar {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0%;
+    background-color: red;
+    overflow-x: hidden;
+    transition: 0.3s ease-in;
+    padding-top: 60px;
+    display: none;
+}
+  
+.sideNavigationBar a {
+    padding: 8px 8px 8px 40px;
+    display: block;
+    font-size: 25px;
+    font-weight: 500;
+    color: #d1d1d1;
+    transition: 0.3s;
+    text-decoration: none;
+}
+  
+.sideNavigationBar a button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: green;
+    font-size: 16px;
+    border-style: none;
+    font-weight: 700;
+}
+  
+.sideNavigationBar a:hover {
+    color: white;
+}
+  
+.sideNavigationBar .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 20px;
+    margin-left: 50px;
+}
+  
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5% 5%;
+}
+  
+.line .side1 {
+    padding-right: 60px;
+}
+  
+.side1 h1 {
+    font-size: 60px;
+    margin-bottom: 15px;
+    color:green;
+}
+  
+.side1 button {
+    width: 200px;
+    padding: 12px 20px;
+    border-radius: 20px;
+    border-style: none;
+    color: black;
+    font-size: 17px;
+    font-weight: 600;
+}
+  
+a {
+    text-decoration: none;
+    color: black;
+}
+@media screen and (max-width: 980px) {
+    .side2 img {
+        width: 350px;
+    }
+  
+    .side1 h1 {
+        font-size: 40px;
+    }
+  
+    .side1 p {
+        font-size: 17px;
+    }
+  
+    .line {
+        margin-top: 80px;
+    }
+}
+  
+@media screen and (max-width: 600px) {
+    .side1 h1 {
+        font-size: 35px;
+    }
+  
+    .line {
+        flex-direction: column;
+    }
+  
+    .line .side1 {
+        padding: 30px;
+    }
+}
+section .topic a {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+  
+.about .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+  
+.about .boxes .box {
+    margin: 10px 20px;
+    max-width: calc(100% / 3 - 50px);
+    text-align: center;
+    border-radius: 14px;
+    background-color: #8cc099
+    padding: 30px 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+    cursor: default;
+}
+.contact
+ {
+    padding: 20px;
+ }
+  
+.contact .content 
+{
+    margin: 0 auto;
+    padding: 30px 0;
+}
+  
+.content .title
+ {
+    width: 80%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 40px;
+}
+  
+.title
+ {
+    margin-bottom: 30px;
+    margin-left: 80px;
+}
+  
+.contactMenu
+ {
+    display: flex;
+    justify-content: space-evenly;
+}
+  
+.input2 
+{
+    margin-top: 10;
+}
+  
+.label1 
+{
+    font-size: 18px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: bolder;
+}
+  
+.contactMenu .input1 input 
+{
+    border-radius: 13px;
+    padding: 6px;
+}
+  
+.input2 input
+ {
+    border-color: rgb(252, 244, 244);
+    width: 400px;
+}
+  
+.button 
+{
+    margin-top: 12px;
+    margin-left: 5px;
+}
+  
+.button button
+ {
+    width: 162px;
+    height: 35px;
+    border-radius: 12px;
+    border-color: transparent;
+}
+  
+.button button:hover
+ {
+    background-color: #8cc099;
+}
+  
+button
+ {
+    width: 162px;
+    height: 35px;
+    border-radius: 12px;
+    border-color: transparent;
+}
+  
+button:hover 
+{
+    background-color: #8cc099;
+}
+  
+.rightside1 
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 300px;
+}
+  
+.title1 
+{
+    font-size: 18px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
+  
+.content1
+ {
+    width: 450px;
+    margin-top: 2px;
+    color: grey;
+}
+footer
+ {
+    background: var(--primary-color);
+    padding: 15px 0;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+} 
+footer .footer span
+ {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--white-color);
+ }
+footer .footer span a 
+{
+    font-weight: 500;
+    color: var(--white-color);
+}
+  
+footer .footer span a:hover
+ {
+    text-decoration: underline;
+}
+  
+@media screen and (max-width: 1060px)
+    {
+    .contactMenu {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .rightside1 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+    }
+  
+    .content1 {
+        width: 100%;
+        margin-top: 2px;
+        color: grey;
+    }
+  
+    .side2 img {
+        width: 95%;
+        height: 90%;
+    }
+}
+  
+@media screen and (max-width: 600px) 
+{
+    .side2 img
+    {
+        width: 100%;
+    }
+  
+    section .topic a {
+        font-size: 20px;
+    }
+  
+    section .topic p {
+        font-size: 5px;
+    }
+  
+    .about .boxes
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .about .boxes .box
+    {
+        max-width: 70%;
+    }
+}
+</style>
+<script>
+function openNavbar()
+ {
+    document.getElementById("sideNavigationBar")
+        .style.width = "50%";
+ }
+function closeNavbar() 
+ {
+    document.getElementById("sideNavigationBar")
+        .style.width = "10%";
+ }
+</script>
+</head>  
+<body>
+    <nav>
+        <div class="heading">Landing Page</div>
+        <span class="sideMenuButton onclick="openNavbar()">
+            ☰
+        </span>
+        <div class="navbar">
+            <ul>
+                <li><a href="landingpageTask.html">Home</a></li>
+                <li><a href="https://www.w3schools.com/html/html_intro.asp">About</a></li>
+                <li><a href="registration22.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+  
+    <!-- Side navigation bar for responsive website -->
+    <div class="sideNavigationBar"id="sideNavigationBar">
+        <a href="#" class="closeButton"onclick="closeNavbar()">
+            ❌
+        </a>
+        <a href="landingpageTask.html">Home</a>
+        <a href="https://www.w3schools.com/html/html_intro.asp">About</a>
+        <a href="registration22.html">Sign Up</a>
+    </div>
+    <!-- Content -->
+    <div class="line" id="Home">
+        <div class="side1">
+            <h1>COURSE MANIA</h1>
+            <button>
+                <a href="https://www.w3schools.com/html/html_intro.asp">Explore More</a>
+            </button>
+        </div>
+        <div class="side2">
+            <img src="data:image/jpeg;base64,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"width="300",height="170">
+        </div>
+    </div>
+    <section class="about" id="My Projects">
+        <div class="content">
+            <div class="title">
+                <span>Courses</span>
+            </div>
+            <div class="boxes">
+                <div class="box">
+                    <div class="topic">
+                        <a href="" target="_blank">
+                         <b>
+                            DSA
+                         </b>
+                        </a>
+                    </div>
+                    <p><b>
+                        The term DSA stands for Data Structures and Algorithms. As the name itself suggests, it is a combination of two 
+                        separate yet interrelated topics.
+                      </b></p>
+                </div>
+                <div class="box">
+                    <div class="topic">
+                        <a href="" target="_blank"><b>
+                            HTML
+                         </b></a>
+                    </div>
+                    <p><b>
+                        HTML stands for HyperText Markup Language. It is used to design web pages using the markup language.
+                    </b></p>
+                </div>
+                <div class="box">
+                    <div class="topic">
+                        <a href="" target="_blank"><b>
+                            Javascript
+                         </b></a>
+                    </div>
+                    <p><b>
+                        JavaScript (JS) is the most popular lightweight, interpreted compiled programming language.
+                    </b></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="content">
+            <div class="title"><span>Sign Up</span></div>
+            <div class="contactMenu">
+                <div class="input1">
+                    <div class="label1">Your Name</div>
+                    <div class="input2">
+                        <input type="text"placeholder="Enter your Name here">
+                    </div>
+                    <div class="label1">
+                        <label>Your Email</label>
+                    </div>
+                    <div class="input2">
+                        <input type="text"placeholder="Enter your Email here">
+                    </div>
+                    <div class="label1">
+                        <label>Your Password</label>
+                    </div>
+                    <div class="input2">
+                        <input type="text"placeholder="Enter your Password here">
+                    </div>
+                    <div class="button">
+                        <button>Sign Up</button>
+                    </div>
+                </div>
+                <div class="input3">
+                    <div class="rightside1">
+                        <div class="title1">
+                            <span>
+                                Contact Us
+                            </span>
+                        </div>
+                        <div class="content1">
+                            8247796613
+                        </div>
+                        <div class="title1">
+                            <span>More Information</span>
+                        </div>
+                        <div class="content1">
+                            Greetings to all the codeclause members out there!We welcome you to the platform where we consistently strive to offer the best service of web development. This   
+                            platform has been designed for every student wishing to expand their knowledge, share their knowledge and is ready to grab their dream job. We have millions of 
+                            dreams to achevie,And we have thousands of tutorials and much more just for the student dreams inside you.Read more..
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer">
+            <span>
+                Created By
+                <a href="https://www.google.com"target="_blank">
+                    Prabhakar Yerramsetti
+                </a>
+            </span>
+        </div>
+    </footer>
+</body>  
+</html>
